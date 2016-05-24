@@ -2,6 +2,11 @@
 Focado em fornecer dados válidos aleatórios para uso em ambiente de homologação/Testes.
 
 # Como usar
+Instalação do pacote.
+```
+composer install
+```
+
 ### Gerador de CPF
 ```
 <?php
