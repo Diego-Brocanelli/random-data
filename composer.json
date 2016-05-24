@@ -1,0 +1,17 @@
+{
+    "name": "root/geradorcpf",
+    "description": "\"Gerador de CPF valido\"",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Diego Brocanelli",
+            "email": "diegod2@msn.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload":{
+        "psr-4":{
+            "CPF\\":"src/CPF/"
+        }
+    }
+}
