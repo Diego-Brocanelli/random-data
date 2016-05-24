@@ -25,4 +25,4 @@ $result = $cpf->generate();
 * [ ]  CPF Validator
 * [ ] CNPJ Generator
 * [ ] CNPJ Validator
-
+* [ ] Include in  [packagist](https://packagist.org/)
