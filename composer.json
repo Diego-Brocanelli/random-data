@@ -1,17 +1,17 @@
 {
-    "name": "root/geradorcpf",
-    "description": "\"Gerador de CPF valido\"",
+    "name": "diego/randomData",
+    "description": "Random Data",
     "license": "MIT",
     "authors": [
         {
             "name": "Diego Brocanelli",
-            "email": "diegod2@msn.com"
+            "email": "contato@diegobrocanelli.com.br"
         }
     ],
     "minimum-stability": "dev",
     "autoload":{
         "psr-4":{
-            "CPF\\":"src/CPF/"
+            "Random\\":"src/Random/"
         }
     }
 }
