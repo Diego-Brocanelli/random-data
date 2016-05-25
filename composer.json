@@ -8,7 +8,11 @@
             "email": "contato@diegobrocanelli.com.br"
         }
     ],
+    "homepage": "https://github.com/Diego-Brocanelli/randomData",
     "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3"
+    },
     "autoload":{
         "psr-4":{
             "Random\\":"src/Random/"
