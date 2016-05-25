@@ -12,7 +12,7 @@
     "homepage": "https://github.com/Diego-Brocanelli/randomData",
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.3.8"
+        "php": ">=5.3.8",
     },
     "autoload":{
         "psr-4":{
