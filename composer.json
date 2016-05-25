@@ -2,6 +2,7 @@
     "name": "diego-brocanelli/random-data",
     "description": "Random Data",
     "license": "MIT",
+    "version":"1.0",
     "authors": [
         {
             "name": "Diego Brocanelli",
