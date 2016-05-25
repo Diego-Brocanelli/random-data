@@ -8,7 +8,6 @@
             "email": "contato@diegobrocanelli.com.br"
         }
     ],
-    "minimum-stability": "dev",
     "autoload":{
         "psr-4":{
             "Random\\":"src/Random/"
