@@ -4,7 +4,7 @@ Focado em fornecer dados válidos aleatórios para uso em ambiente de homologaç
 # Como usar
 Instalação do pacote.
 ```
-composer install
+composer require diego-brocanelli/random-data
 ```
 
 ### Gerador de CPF
