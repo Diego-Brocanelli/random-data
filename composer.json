@@ -10,9 +10,10 @@
         }
     ],
     "homepage": "https://github.com/Diego-Brocanelli/randomData",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.8",
+        "diego-brocanelli/random-data": "dev-master"
     },
     "autoload":{
         "psr-4":{
