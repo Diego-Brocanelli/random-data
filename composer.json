@@ -10,7 +10,7 @@
         }
     ],
     "homepage": "https://github.com/Diego-Brocanelli/randomData",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=5.3.8",
     },
