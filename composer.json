@@ -1,16 +1,17 @@
 {
     "name": "diego-brocanelli/random-data",
     "description": "Random Data",
+    "type": "library",
     "license": "MIT",
     "version":"1.0",
+    "homepage": "https://github.com/Diego-Brocanelli/randomData",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Diego Brocanelli",
             "email": "contato@diegobrocanelli.com.br"
         }
     ],
-    "homepage": "https://github.com/Diego-Brocanelli/randomData",
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.8"
     },
