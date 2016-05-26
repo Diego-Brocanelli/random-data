@@ -2,9 +2,18 @@
 Focado em fornecer dados válidos aleatórios para uso em ambiente de homologação/Testes.
 
 # Como usar
-Instalação do pacote.
+#### Instalação do pacote.
+Pela linha de comando no diretório raiz do projeto.
 ```
 composer require diego-brocanelli/random-data dev-master
+```
+Por meio do composer.json
+```
+{
+    "require": {
+        "diego-brocanelli/random-data": "dev-master"
+    }
+}
 ```
 
 ### Gerador de CPF
@@ -25,4 +34,4 @@ $result = $cpf->generate();
 * [ ]  CPF Validator
 * [ ] CNPJ Generator
 * [ ] CNPJ Validator
-* [ ] Include in  [packagist](https://packagist.org/)
+* [X] Include in  [packagist](https://packagist.org/)
