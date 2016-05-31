@@ -25,7 +25,19 @@ require_once __DIR__.'/vendor/autoload.php';
 use Random\Generate\CPF\CPF;
 
 $cpf    = new CPF();
-$result = $cpf->generate();
+echo $cpf->generate();
+```
+
+### Gerador de CNPJ
+```
+<?php
+
+require_once __DIR__.'/vendor/autoload.php';
+
+use Random\Generate\CNPJ\CNPJ;
+
+$cnpj = new CNPJ();
+echo $cnpj->generate();
 ```
 
 # To-do list
