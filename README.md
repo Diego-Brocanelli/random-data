@@ -30,8 +30,9 @@ $result = $cpf->generate();
 
 # To-do list
 
-* [X]  CPF Generator
-* [ ]  CPF Validator
-* [ ] CNPJ Generator
+* [X] CPF Generator
+* [ ] CPF Validator
+* [X] CNPJ Generator
 * [ ] CNPJ Validator
+* [ ] User data
 * [X] Include in  [packagist](https://packagist.org/)
