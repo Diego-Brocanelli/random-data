@@ -40,11 +40,39 @@ $cnpj = new CNPJ();
 echo $cnpj->generate();
 ```
 
+### Validar CPF
+```
+<?php
+
+require_once __DIR__.'/vendor/autoload.php';
+
+use Random\Validate\CPF\CPF as ValidateCPF;
+
+$validateCPF = new ValidateCPF();
+var_dump( $validateCPF->isValid('64893836757') );
+
+//output: true
+```
+
+### Validar CNPJ
+```
+<?php
+
+require_once __DIR__.'/vendor/autoload.php';
+
+use Random\Validate\CNPJ\CNPJ as ValidateCNPJ;
+
+$ValidateCNPJ = new ValidateCNPJ();
+var_dump( $ValidateCNPJ->isValid('77496644000147') );
+
+//output: true
+```
+
 # To-do list
 
 * [X] CPF Generator
-* [ ] CPF Validator
+* [X] CPF Validator
 * [X] CNPJ Generator
-* [ ] CNPJ Validator
+* [X] CNPJ Validator
 * [ ] User data
 * [X] Include in  [packagist](https://packagist.org/)
