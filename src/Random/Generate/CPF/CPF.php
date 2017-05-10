@@ -17,31 +17,31 @@ class CPF extends AbstractGenerator
     {
         $eleven = 11;
 
-        $n1 = $this->randomNumber();    
-        $n2 = $this->randomNumber();    
-        $n3 = $this->randomNumber();    
-        $n4 = $this->randomNumber();    
-        $n5 = $this->randomNumber();    
-        $n6 = $this->randomNumber();    
-        $n7 = $this->randomNumber();    
-        $n8 = $this->randomNumber();    
-        $n9 = $this->randomNumber();    
+        $number1 =  $this->randomNumber();    
+        $number2 = $this->randomNumber();    
+        $number3 = $this->randomNumber();    
+        $number4 = $this->randomNumber();    
+        $number5 = $this->randomNumber();    
+        $number6 = $this->randomNumber();    
+        $number7 = $this->randomNumber();    
+        $number8 = $this->randomNumber();    
+        $number9 = $this->randomNumber();    
 
-        $sumD1 = ($n9*2) + ($n8*3) + ($n7*4) + ($n6*5) + ($n5*6) + ($n4*7) + ($n3*8) + ($n2*9) + ($n1*10);
-        $d1    = $eleven - ( $this->mod( $sumD1, $eleven ) );
+        $sumD1 = ($number9*2) + ($number8*3) + ($number7*4) + ($number6*5) + ($number5*6) + ($number4*7) + ($number3*8) + ($number2*9) + ($number1*10);
+        $digit1    = $eleven - ( $this->mod( $sumD1, $eleven ) );
 
-        if($d1 >= 10){
-            $d1 = 0;
+        if($digit1 >= 10){
+            $digit1 = 0;
         }
 
-        $sumD2 = ($d1*2) + ($n9*3) + ($n8*4) + ($n7*5) + ($n6*6) + ($n5*7) + ($n4*8) + ($n3*9) + ($n2*10) + ($n1*11);
-        $d2    = $eleven - ( $this->mod( $sumD2, $eleven ) );
+        $sumD2 = ($digit1*2) + ($number9*3) + ($number8*4) + ($number7*5) + ($number6*6) + ($number5*7) + ($number4*8) + ($number3*9) + ($number2*10) + ($number1*11);
+        $digit2    = $eleven - ( $this->mod( $sumD2, $eleven ) );
         
-        if($d2 >= 10){
-            $d2 = 0;
+        if($digit2 >= 10){
+            $digit2 = 0;
         }
         
-        $cpf = $n1.$n2.$n3.$n4.$n5.$n6.$n7.$n8.$n9.$d1.$d2;
+        $cpf = $number1.$number2.$number3.$number4.$number5.$number6.$number7.$number8.$number9.$digit1.$digit2;
 
         return $cpf;
     }
