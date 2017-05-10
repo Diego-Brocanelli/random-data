@@ -8,35 +8,35 @@ class CNPJ extends AbstractGenerator
 {
     public function generate()
     {
-        $n1 = $this->randomNumber();
-        $n2 = $this->randomNumber();
-        $n3 = $this->randomNumber();
-        $n4 = $this->randomNumber();
-        $n5 = $this->randomNumber();
-        $n6 = $this->randomNumber();
-        $n7 = $this->randomNumber();
-        $n8 = $this->randomNumber();
-        $n9 = 0;
-        $n10= 0;
-        $n11= 0;
-        $n12= 1;
+        $number1  = $this->randomNumber();
+        $number2  = $this->randomNumber();
+        $number3  = $this->randomNumber();
+        $number4  = $this->randomNumber();
+        $number5  = $this->randomNumber();
+        $number6  = $this->randomNumber();
+        $number7  = $this->randomNumber();
+        $number8  = $this->randomNumber();
+        $number9  = 0;
+        $number10 = 0;
+        $number11 = 0;
+        $number12 = 1;
 
-        $sumD1 = ($n12*2)+($n11*3)+($n10*4)+($n9*5)+($n8*6)+($n7*7)+($n6*8)+($n5*9)+($n4*2)+($n3*3)+($n2*4)+($n1*5);
-        $d1    = 11 - ( $this->mod( $sumD1, 11 ) );
+        $sumD1 = ($number12*2)+($number11*3)+($number10*4)+($number9*5)+($number8*6)+($number7*7)+($number6*8)+($number5*9)+($number4*2)+($number3*3)+($number2*4)+($number1*5);
+        $digit1    = 11 - ( $this->mod( $sumD1, 11 ) );
 
-        if ( $d1 >= 10 )
+        if ( $digit1 >= 10 )
         { 
-            $d1 = 0 ;
+            $digit1 = 0 ;
         }
         
-        $sumD2 = ($d1*2)+($n12*3)+($n11*4)+($n10*5)+($n9*6)+($n8*7)+($n7*8)+($n6*9)+($n5*2)+($n4*3)+($n3*4)+($n2*5)+($n1*6);
-        $d2    = 11 - ( $this->mod( $sumD2, 11) );
+        $sumD2 = ($digit1*2)+($number12*3)+($number11*4)+($number10*5)+($number9*6)+($number8*7)+($number7*8)+($number6*9)+($number5*2)+($number4*3)+($number3*4)+($number2*5)+($number1*6);
+        $digit2    = 11 - ( $this->mod( $sumD2, 11) );
         
-        if ($d2 >= 10) { 
-            $d2 = 0;
+        if ($digit2 >= 10) { 
+            $digit2 = 0;
         }
         
-        $retorno = $n1.$n2.$n3.$n4.$n5.$n6.$n7.$n8.$n9.$n10.$n11.$n12.$d1.$d2;
+        $retorno = $number1.$number2.$number3.$number4.$number5.$number6.$number7.$number8.$number9.$number10.$number11.$number12.$digit1.$digit2;
 
         return $retorno;
     }
