@@ -22,7 +22,7 @@ class CPF
         $cpf = preg_replace('/\D/', '', $cpf);
 
         if(strlen($cpf) != 11){
-
+            return false;
         }
 
         return $this->checkDigits($cpf);
