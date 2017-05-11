@@ -18,7 +18,15 @@ Por meio do composer.json
 }
 ```
 
-### Gerador de CPF
+#### Rodando os testes
+No diretório raiz do projeto execute:
+```
+php vendor/bin/phpunit --verbose tests/
+```
+
+# CPF
+
+#### Gerar
 ```
 <?php
 
@@ -27,22 +35,9 @@ require_once __DIR__.'/vendor/autoload.php';
 use Random\Generate\CPF\CPF;
 
 $cpf    = new CPF();
-echo $cpf->generate();
+echo $cpf->generate(); // output: '64893836757'
 ```
-
-### Gerador de CNPJ
-```
-<?php
-
-require_once __DIR__.'/vendor/autoload.php';
-
-use Random\Generate\CNPJ\CNPJ;
-
-$cnpj = new CNPJ();
-echo $cnpj->generate();
-```
-
-### Validar CPF
+#### Validar
 ```
 <?php
 
@@ -51,12 +46,23 @@ require_once __DIR__.'/vendor/autoload.php';
 use Random\Validate\CPF\CPF as ValidateCPF;
 
 $validateCPF = new ValidateCPF();
-var_dump( $validateCPF->isValid('64893836757') );
+$validateCPF->isValid('64893836757') ; //output: true
+```
+# CNPJ 
 
-//output: true
+#### Gerar
+```
+<?php
+
+require_once __DIR__.'/vendor/autoload.php';
+
+use Random\Generate\CNPJ\CNPJ;
+
+$cnpj = new CNPJ();
+echo $cnpj->generate(); // output: '77496644000147'
 ```
 
-### Validar CNPJ
+#### Validar
 ```
 <?php
 
@@ -65,16 +71,12 @@ require_once __DIR__.'/vendor/autoload.php';
 use Random\Validate\CNPJ\CNPJ as ValidateCNPJ;
 
 $ValidateCNPJ = new ValidateCNPJ();
-var_dump( $ValidateCNPJ->isValid('77496644000147') );
-
-//output: true
+$ValidateCNPJ->isValid('77496644000147'); //output: true
 ```
-
 # To-do list
 
 * [X] CPF Generator
 * [X] CPF Validator
 * [X] CNPJ Generator
 * [X] CNPJ Validator
-* [ ] User data
 * [X] Include in  [packagist](https://packagist.org/)
