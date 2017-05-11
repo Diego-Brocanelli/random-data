@@ -9,13 +9,16 @@ class CNPJ
 {
     /**
      * Validate the CNPJ
-     * Code ported from https://github.com/Respect/Validation
+     * 
+     * Code ported from:
+     *     - https://github.com/Respect/Validation
+     *     - jsfromhell.com
+     * 
      * @param  string  $cnpj
      * @return boolean      
      */
     public function isValid($cnpj)
     {
-        //Code ported from jsfromhell.com
         $cnpj = preg_replace('/\D/', '', $cnpj);
         
         $base = array(6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2);
