@@ -2,7 +2,7 @@
     "name": "diego-brocanelli/random-data",
     "description": "Random Data",
     "type": "library",
-    "license": "MIT",
+    "license": "BSD-3",
     "version":"1.0",
     "homepage": "https://github.com/Diego-Brocanelli/randomData",
     "minimum-stability": "dev",
@@ -13,7 +13,8 @@
         }
     ],
     "require": {
-        "php": ">=5.3.8"
+        "php": ">=5.3.8",
+        "phpunit/phpunit": "^6.1"
     },
     "autoload":{
         "psr-4":{
