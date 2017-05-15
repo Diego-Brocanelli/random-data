@@ -12,7 +12,7 @@ Pela linha de comando no diretório raiz do projeto.
 composer require diego-brocanelli/random-data dev-master
 ```
 Por meio do composer.json
-```
+```php
 {
     "require": {
         "diego-brocanelli/random-data": "dev-master"
@@ -22,14 +22,14 @@ Por meio do composer.json
 
 #### Rodando os testes
 No diretório raiz do projeto execute:
-```
+```php
 php vendor/bin/phpunit --verbose tests/
 ```
 
 # CPF
 
 #### Gerar
-```
+```php
 <?php
 
 require_once __DIR__.'/vendor/autoload.php';
@@ -40,7 +40,7 @@ $cpf    = new CPF();
 echo $cpf->generate(); // output: '64893836757'
 ```
 #### Validar
-```
+```php
 <?php
 
 require_once __DIR__.'/vendor/autoload.php';
@@ -53,7 +53,7 @@ $validateCPF->isValid('64893836757') ; //output: true
 # CNPJ 
 
 #### Gerar
-```
+```php
 <?php
 
 require_once __DIR__.'/vendor/autoload.php';
@@ -65,7 +65,7 @@ echo $cnpj->generate(); // output: '77496644000147'
 ```
 
 #### Validar
-```
+```php
 <?php
 
 require_once __DIR__.'/vendor/autoload.php';
