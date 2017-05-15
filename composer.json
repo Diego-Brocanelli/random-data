@@ -2,8 +2,7 @@
     "name": "diego-brocanelli/random-data",
     "description": "Random Data",
     "type": "library",
-    "license": "BSD-3",
-    "version":"1.0",
+    "license": "BSD-3-Clause",
     "homepage": "https://github.com/Diego-Brocanelli/randomData",
     "minimum-stability": "dev",
     "authors": [
