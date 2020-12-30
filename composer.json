@@ -3,6 +3,7 @@
     "description": "Random Data",
     "type": "library",
     "license": "BSD-3-Clause",
+    "version":"2.0.0",
     "homepage": "https://github.com/Diego-Brocanelli/randomData",
     "minimum-stability": "dev",
     "authors": [
@@ -12,12 +13,23 @@
         }
     ],
     "require": {
-        "php": ">=5.3.8",
-        "phpunit/phpunit": "^6.1"
+        "php": ">=7.4"
     },
     "autoload":{
         "psr-4":{
-            "Random\\":"src/Random/"
+            "Random\\":"src/"
         }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "4.0.x-dev",
+        "phpstan/phpstan": "0.12.x-dev",
+        "phpunit/phpunit": "10.0.x-dev"
+    },
+    "scripts":{
+        "tests":["vendor/bin/phpunit --testdox --color tests"],
+        "analyse":["vendor/bin/phpstan analyse src --level=8"],
+        "phpcs":["vendor/bin/phpcs --colors --standard=PSR1,PSR12 src"],
+        "phpcbf":["vendor/bin/phpcs --colors --standard=PSR1,PSR12 src"],
+        "all":["@tests", "@analyse", "@phpcs"]
     }
 }
