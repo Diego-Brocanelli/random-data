@@ -1,15 +1,21 @@
 <?php
 
-use Random\Generate\CPF\CPF;
+declare(strict_types=1);
+
+namespace Random\Tests;
+
+use Random\CPF;
 use PHPUnit\Framework\TestCase;
 
-class GerarCPFTest extends TestCase
+class GenerateCPFTest extends TestCase
 {
-    public function testGenerateCPFSuccessfully()
+    /** @test */
+    public function generateCPFSuccessfully()
     {
-        $CPF = new CPF();
+        $cpf    = new CPF();
+        $number = $cpf->generate();
 
-        $this->assertTrue( is_string( $CPF->generate() ) );
-        $this->assertTrue( strlen( $CPF->generate() ) == 11 );
+        $this->assertTrue(is_string($number));
+        $this->assertTrue(strlen($number) === 11);
     }
 }
