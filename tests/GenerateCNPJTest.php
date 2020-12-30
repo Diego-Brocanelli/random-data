@@ -1,15 +1,21 @@
 <?php
 
-use Random\Generate\CNPJ\CNPJ;
+declare(strict_types=1);
+
+namespace Random\Tests;
+
+use Random\CNPJ;
 use PHPUnit\Framework\TestCase;
 
-class GerarCNPJTest extends TestCase
+class GenerateCNPJTest extends TestCase
 {
-    public function testGenerateCNPJSuccessfully()
+    /** @test */
+    public function generateCNPJSuccessfully()
     {
-        $CNPJ = new CNPJ();
+        $cnpj   = new CNPJ();
+        $number = $cnpj->generate();
 
-        $this->assertTrue( is_string( $CNPJ->generate() ) );
-        $this->assertTrue( strlen( $CNPJ->generate() ) == 14 );
+        $this->assertTrue(is_string($number));
+        $this->assertTrue(strlen($number) === 14);
     }
 }
