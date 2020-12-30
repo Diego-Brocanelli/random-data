@@ -1,5 +1,5 @@
 # Random Data 
-Focado em fornecer dados válidos aleatórios para uso em ambiente de homologação/Testes.
+Focado em fornecer dados válidos aleatórios para uso em ambiente de desenvolvimento ou homologação.
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2049798bf7324d2797a9f3b1927a1158)](https://www.codacy.com/app/Diego-Brocanelli/randomData?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Diego-Brocanelli/randomData&amp;utm_campaign=Badge_Grade)
 [![Code Climate](https://codeclimate.com/github/Diego-Brocanelli/randomData/badges/gpa.svg)](https://codeclimate.com/github/Diego-Brocanelli/randomData)
