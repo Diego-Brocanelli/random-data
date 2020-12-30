@@ -1,38 +1,45 @@
 <?php
 
-use Random\Validate\CPF\CPF as ValidateCPF;
+declare(strict_types=1);
+
+namespace Random\Tests;
+
+use Random\Validate\CPF;
 use PHPUnit\Framework\TestCase;
 
 class ValidateCPFTest extends TestCase
 {
-    private $CPF;
+    private $cpf;
 
-    public function setUp()
+    public function setUp(): void
     {
-        $this->CPF = new ValidateCPF();
+        $this->cpf = new CPF();
     }
 
-    public function testCPFIsValid()
+    /** @test */
+    public function valid()
     {
-        $this->assertTrue( $this->CPF->isValid('46516533407') );
-        $this->assertTrue( $this->CPF->isValid('590.667.041-60') );
-        $this->assertTrue( $this->CPF->isValid('57188778663') );
-        $this->assertTrue( $this->CPF->isValid('551.053.171-14') );
-        $this->assertTrue( $this->CPF->isValid('80591656078') );
-        $this->assertTrue( $this->CPF->isValid('548.576.145-37') );
+        $this->assertTrue($this->cpf->isValid('46516533407'));
+        $this->assertTrue($this->cpf->isValid('590.667.041-60'));
+        $this->assertTrue($this->cpf->isValid('57188778663'));
+        $this->assertTrue($this->cpf->isValid('551.053.171-14'));
+        $this->assertTrue($this->cpf->isValid('80591656078'));
+        $this->assertTrue($this->cpf->isValid('548.576.145-37'));
     }
 
-    public function testEmptyCPF()
+    /** @test */
+    public function emptyCPF()
     {
-        $this->assertFalse( $this->CPF->isValid('') );
+        $this->assertFalse($this->cpf->isValid(''));
     }
 
-    public function testInvalidCPF()
+    /** @test */
+    public function invalid()
     {
-        $this->assertFalse( $this->CPF->isValid('1234594641564561654654') );
-        $this->assertFalse( $this->CPF->isValid('abclandsandlas') );
-        $this->assertFalse( $this->CPF->isValid('444.555.999-11') );
-        $this->assertFalse( $this->CPF->isValid('1321231.561561.51561-106545') );
-        $this->assertFalse( $this->CPF->isValid('13.5.1-1') );
+        $this->assertFalse($this->cpf->isValid('1234594641564561654654'));
+        $this->assertFalse($this->cpf->isValid('abclandsandlas'));
+        $this->assertFalse($this->cpf->isValid('444.555.999-11'));
+        $this->assertFalse($this->cpf->isValid('1321231.561561.51561-106545'));
+        $this->assertFalse($this->cpf->isValid('13.5.1-1'));
     }
 }
