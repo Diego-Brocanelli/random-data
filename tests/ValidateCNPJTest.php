@@ -29,7 +29,7 @@ class ValidateCNPJTest extends TestCase
     }
 
     /** @test */
-    public function emptyCNPJ()
+    public function emptyCnpj()
     {
         $this->assertFalse($this->cnpj->isValid(''));
     }
