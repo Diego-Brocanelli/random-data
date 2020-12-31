@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Random;
 
 use Random\AbstractGenerator;
+use Random\Validate\CNPJ as CnpjValidator;
 
 class CNPJ extends AbstractGenerator
 {
@@ -71,5 +72,10 @@ class CNPJ extends AbstractGenerator
         $result .= $split[12] . $split[13];
 
         return $result;
+    }
+
+    public function isValid(string $cnpj): bool
+    {
+        return (new CnpjValidator())->isValid($cnpj);
     }
 }
