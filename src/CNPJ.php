@@ -54,4 +54,22 @@ class CNPJ extends AbstractGenerator
 
         return $retorno;
     }
+
+    public function generateWithMask(): string
+    {
+        $cnpj  = $this->generate();
+        $split = str_split($cnpj);
+
+        $result  = $split[0] . $split[1];
+        $result .= '.';
+        $result .= $split[2] . $split[3] . $split[4];
+        $result .= '.';
+        $result .= $split[5] . $split[6] . $split[7];
+        $result .= '/';
+        $result .= $split[8] . $split[9] . $split[10] . $split[11];
+        $result .= '-';
+        $result .= $split[12] . $split[13];
+
+        return $result;
+    }
 }
