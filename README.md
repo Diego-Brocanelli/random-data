@@ -9,7 +9,7 @@ Focado em fornecer dados válidos aleatórios para uso em ambiente de desenvolvi
 
 PHP >= 7.4;
 
-## Instalar
+## Instalação
 
 ```
 composer install
@@ -66,9 +66,21 @@ require_once __DIR__.'/vendor/autoload.php';
 
 use Random\CPF;
 
-$cpf = new CPF();
-echo $cpf->generate(); // output: '64893836757'
+echo (new CPF)->generate(); // output: '64893836757'
 ```
+
+#### Gerar com mascara
+
+```php
+<?php
+
+require_once __DIR__.'/vendor/autoload.php';
+
+use Random\CPF;
+
+echo (new CPF)->generateWithMask(); // output: '648.938.367-57'
+```
+
 #### Validar
 
 ```php
@@ -78,9 +90,13 @@ require_once __DIR__.'/vendor/autoload.php';
 
 use Random\Validate\CPF;
 
-$validateCPF = new CPF();
-$validateCPF->isValid('64893836757') ; //output: true
+(new CPF())->isValid('56359989093') ; //output: true
+
+// ou
+
+(new CPF())->isValid('563.599.890-93') ; //output: true
 ```
+
 
 ### CNPJ
 
@@ -93,8 +109,19 @@ require_once __DIR__.'/vendor/autoload.php';
 
 use Random\CNPJ;
 
-$cnpj = new CNPJ();
-echo $cnpj->generate(); // output: '77496644000147'
+echo (new CNPJ)->generate(); // output: '77496644000147'
+```
+
+#### Gerar com mascara
+
+```php
+<?php
+
+require_once __DIR__.'/vendor/autoload.php';
+
+use Random\CNPJ;
+
+echo (new CNPJ)->generateWithMask(); // output: '99.177.535/0001-08'
 ```
 
 #### Validar
@@ -106,9 +133,13 @@ require_once __DIR__.'/vendor/autoload.php';
 
 use Random\Validate\CNPJ;
 
-$ValidateCNPJ = new CNPJ();
-$ValidateCNPJ->isValid('77496644000147'); //output: true
+(new CNPJ)->isValid('99177535000108'); //output: true
+
+// ou
+
+(new CNPJ)->isValid('99.177.535/0001-08'); //output: true
 ```
+
 ## Autor
 
 <a href="https://www.diegobrocanelli.com.br/">
