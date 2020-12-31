@@ -20,17 +20,25 @@ class CNPJ
 
         $base = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
 
-        if (strlen($cnpj) !== 14) {
+        if ($cnpj === null || strlen($cnpj) !== 14) {
             return false;
         }
 
-        for ($interator = 0, $number = 0; $interator < 12; $number += $cnpj[$interator] * $base[++$interator]);
+        for (
+            $interator = 0,$number = 0;
+            $interator < 12;
+            $number += (int)$cnpj[$interator] * (int)$base[++$interator]
+        );
 
         if ((int)$cnpj[12] !== ((($number %= 11) < 2) ? 0 : 11 - $number)) {
             return false;
         }
 
-        for ((int)$interator = 0, $number = 0; $interator <= 12; $number += $cnpj[$interator] * $base[$interator++]);
+        for (
+            (int)$interator = 0, $number = 0;
+            $interator <= 12;
+            $number += (int)$cnpj[$interator] * (int)$base[$interator++]
+        );
 
         if ((int)$cnpj[13] !== ((($number %= 11) < 2) ? 0 : 11 - $number)) {
             return false;
