@@ -64,9 +64,9 @@ composer require diego-brocanelli/money_to_word dev-main
 
 require_once __DIR__.'/vendor/autoload.php';
 
-use Random\CPF;
+use Random\Faker;
 
-echo (new CPF)->generate(); // output: '64893836757'
+echo (new Faker())->cpf()->generate(); // output: '64893836757'
 ```
 
 #### Gerar com mascara
@@ -76,9 +76,9 @@ echo (new CPF)->generate(); // output: '64893836757'
 
 require_once __DIR__.'/vendor/autoload.php';
 
-use Random\CPF;
+use Random\Faker;
 
-echo (new CPF)->generateWithMask(); // output: '648.938.367-57'
+echo (new Faker())->cpf()->generateWithMask(); // output: '648.938.367-57'
 ```
 
 #### Validar
@@ -88,13 +88,13 @@ echo (new CPF)->generateWithMask(); // output: '648.938.367-57'
 
 require_once __DIR__.'/vendor/autoload.php';
 
-use Random\Validate\CPF;
+use Random\Faker;
 
-(new CPF())->isValid('56359989093') ; //output: true
+(new Faker())->cpf()->isValid('56359989093') ; //output: true
 
 // ou
 
-(new CPF())->isValid('563.599.890-93') ; //output: true
+(new Faker())->cpf()->isValid('563.599.890-93') ; //output: true
 ```
 
 
@@ -107,9 +107,9 @@ use Random\Validate\CPF;
 
 require_once __DIR__.'/vendor/autoload.php';
 
-use Random\CNPJ;
+use Random\Faker;
 
-echo (new CNPJ)->generate(); // output: '77496644000147'
+echo (new Faker())->cnpj()->generate(); // output: '77496644000147'
 ```
 
 #### Gerar com mascara
@@ -121,7 +121,7 @@ require_once __DIR__.'/vendor/autoload.php';
 
 use Random\CNPJ;
 
-echo (new CNPJ)->generateWithMask(); // output: '99.177.535/0001-08'
+echo (new Faker())->cnpj()->generateWithMask(); // output: '99.177.535/0001-08'
 ```
 
 #### Validar
@@ -131,13 +131,13 @@ echo (new CNPJ)->generateWithMask(); // output: '99.177.535/0001-08'
 
 require_once __DIR__.'/vendor/autoload.php';
 
-use Random\Validate\CNPJ;
+use Random\Faker;
 
-(new CNPJ)->isValid('99177535000108'); //output: true
+(new Faker())->cnpj()->isValid('99177535000108'); //output: true
 
 // ou
 
-(new CNPJ)->isValid('99.177.535/0001-08'); //output: true
+(new Faker())->cnpj()->isValid('99.177.535/0001-08'); //output: true
 ```
 
 ## Autor
