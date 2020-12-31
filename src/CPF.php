@@ -55,4 +55,20 @@ class CPF extends AbstractGenerator
 
         return $cpf;
     }
+
+    public function generateWithMask(): string
+    {
+        $cpf   = $this->generate();
+        $split = str_split($cpf);
+
+        $result  = $split[0] . $split[1] . $split[2];
+        $result .= '.';
+        $result .= $split[3] . $split[4] . $split[5];
+        $result .= '.';
+        $result .= $split[6] . $split[7] . $split[8];
+        $result .= '-';
+        $result .= $split[9] . $split[10];
+
+        return $result;
+    }
 }
