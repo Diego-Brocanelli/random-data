@@ -28,7 +28,7 @@ class ValidateCPFTest extends TestCase
     }
 
     /** @test */
-    public function emptyCPF()
+    public function emptyCpf()
     {
         $this->assertFalse($this->cpf->isValid(''));
     }
