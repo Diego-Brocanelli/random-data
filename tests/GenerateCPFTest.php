@@ -10,12 +10,24 @@ use PHPUnit\Framework\TestCase;
 class GenerateCPFTest extends TestCase
 {
     /** @test */
-    public function generateCPFSuccessfully()
+    public function generateCpfSuccessfully()
     {
         $cpf    = new CPF();
         $number = $cpf->generate();
 
         $this->assertTrue(is_string($number));
         $this->assertTrue(strlen($number) === 11);
+    }
+
+    /** @test */
+    public function generateWithMask()
+    {
+        foreach (range(0, 1000) as $item) {
+            $cpf   = new CPF();
+            $number = $cpf->generateWithMask();
+
+            $this->assertTrue(is_string($number));
+            $this->assertTrue(strlen($number) === 14);
+        }
     }
 }
