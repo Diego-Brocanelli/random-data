@@ -17,7 +17,7 @@ class CPF
 
         $cpf = preg_replace('/\D/', '', $cpf);
 
-        if (strlen($cpf) != 11) {
+        if ($cpf === null || strlen($cpf) != 11) {
             return false;
         }
 
@@ -28,15 +28,17 @@ class CPF
     {
         $result = true;
 
+        $cpfForCheck = str_split($cpf);
         for ($limit = 9; $limit < 11; $limit++) {
             for ($digit = 0, $counter = 0; $counter < $limit; $counter++) {
-                $digit += $cpf{$counter} * ( ($limit + 1) - $counter );
+                $calc   = ($limit + 1) - $counter;
+                $digit += (int)$cpfForCheck[$counter] * $calc;
             }
 
             $digit = ((10 * $digit) % 11) % 10;
 
-            if ($cpf{$counter} != $digit) {
-                $result =  false;
+            if ($cpfForCheck[$counter] != $digit) {
+                $result = false;
             }
         }
 
