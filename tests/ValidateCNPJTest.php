@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace Random\Tests;
 
-use Random\Validate\CNPJ;
+use Random\CNPJ;
+use Random\Faker;
 use PHPUnit\Framework\TestCase;
 
 class ValidateCNPJTest extends TestCase
@@ -13,7 +14,7 @@ class ValidateCNPJTest extends TestCase
 
     public function setUp(): void
     {
-        $this->cnpj = new CNPJ();
+        $this->cnpj = (new Faker())->cnpj();
     }
 
     /** @test */
@@ -26,6 +27,12 @@ class ValidateCNPJTest extends TestCase
         $this->assertTrue($this->cnpj->isValid(' 79721575000153'));
         $this->assertTrue($this->cnpj->isValid('13.212.735/0001-20 '));
         $this->assertTrue($this->cnpj->isValid('23473737000127'));
+
+        $cnpj = new CNPJ;
+        foreach (range(1, 9999) as $item) {
+            $this->assertTrue($this->cnpj->isValid($cnpj->generate()));
+            $this->assertTrue($this->cnpj->isValid($cnpj->generateWithMask()));
+        }
     }
 
     /** @test */

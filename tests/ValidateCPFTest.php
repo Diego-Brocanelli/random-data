@@ -4,16 +4,17 @@ declare(strict_types=1);
 
 namespace Random\Tests;
 
-use Random\Validate\CPF;
+use Random\CPF;
+use Random\Faker;
 use PHPUnit\Framework\TestCase;
 
 class ValidateCPFTest extends TestCase
 {
-    private $cpf;
+    private CPF $cpf;
 
     public function setUp(): void
     {
-        $this->cpf = new CPF();
+        $this->cpf = (new Faker())->cpf();
     }
 
     /** @test */
@@ -25,6 +26,12 @@ class ValidateCPFTest extends TestCase
         $this->assertTrue($this->cpf->isValid('551.053.171-14'));
         $this->assertTrue($this->cpf->isValid('80591656078'));
         $this->assertTrue($this->cpf->isValid('548.576.145-37'));
+
+        $cpf = new CPF;
+        foreach (range(1, 9999) as $item) {
+            $this->assertTrue($this->cpf->isValid($cpf->generate()));
+            $this->assertTrue($this->cpf->isValid($cpf->generateWithMask()));
+        }
     }
 
     /** @test */
